@@ -9,7 +9,7 @@
   <body>
     <h1>Select a Venue to see what's playing tonight!</h1>
 
-    <!-- This is version 4-2 ... GOAL 1: Standard Dropdown Menu-->
+    <!-- GOAL 1: Standard Dropdown Menu-->
      <div>
       <label for="siteSelectorDropdown">Choose A Venue:</label>
       <select id="siteSelectorDropdown" onchange="LoadIntoIframe(this)">
@@ -325,7 +325,7 @@
     <script>
       // 1. ROBUSTLY DUPLICATE OPTIONS INTO THE DROPDOWN:
       document.addEventListener('DOMContentLoaded', (event) => {
-          const dataListOptions = document.getElementById('optionList').querySelectorAll('option, optgroup');
+          const dataListOptions = document.getElementById('optionList').querySelectorAll(':scope > optgroup, :scope > option');
           const selectDropdown = document.getElementById('siteSelectorDropdown');
 
           // *** FIX: Clear the dropdown completely before adding the cloned options ***
@@ -391,4 +391,3 @@
     </script>
   </body>
 </html>
-
