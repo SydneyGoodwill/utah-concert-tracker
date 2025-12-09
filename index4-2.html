@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's Happening in Northern Utah Tonight?</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <h1>Select a Venue to see what's playing tonight!</h1>
+
+    <!-- GOAL 1: Standard Dropdown Menu-->
+     <div>
+      <label for="siteSelectorDropdown">Choose A Venue:</label>
+      <select id="siteSelectorDropdown" onchange="LoadIntoIframe(this)">
+        <option value="">--Select a Venue--</option>
+      </select>
+     </div>
+
+     <br>
+
+     <!-- GOAL 2: Search Input Field -->
+      <div>
+        <label for="searchInput">Search for a Venue:</label>
+         <input type="text" id="searchInput" placeholder="Search options..." list="optionList" onchange="LoadIntoIframe(this)">
+      </div>
+
+      <!-- The Master List of Options (hidden from view, feeds both the select and input above)-->
+      <datalist id="optionList">
+        <!-- START OF OPTIONS -->
+        <optgroup label="Layton">
+          <option 
+            value="https://www.davisarts.org/upcoming-events/" 
+            data-second-link="https://www.davisarts.org/upcoming-events/">
+            Davis Arts Council (multiple venues)
+          </option>
+        </optgroup>
+        <optgroup label="Magna">
+          <option
+            value="https://concertfix.com/concerts/magna-ut+the-great-saltair" 
+            data-second-link="https://www.facebook.com/saltair/"
+          >
+            Great Saltair
+          </option>
+        </optgroup>
+        <optgroup label="Ogden">
+          <option
+            value="https://www.eventticketscenter.com/ogden-amphitheater-ogden-tickets/554381/e" 
+            data-second-link="https://www.instagram.com/ogdenamphitheater/?hl=en"
+          >
+            Ogden Amphitheater
+          </option>
+          <option 
+            value="https://www.ogdentwilight.com/"
+            data-second-link="https://www.ogdentwilight.com/"
+          >
+            Ogden Twilight Concert Series
+          </option>
+          <option
+            value="https://www.eventticketscenter.com/peerys-egyptian-theatre-ogden-tickets/626105/e" 
+            data-second-link="https://www.ogdenpet.com/events"
+          >
+            Peery's Egyptian Theater
+          </option>
+          <option 
+            value="https://www.terraceplazaplayhouse.com/" 
+            data-second-link="https://www.terraceplazaplayhouse.com/"  
+          >
+            Terrace Plaza Playhouse
+          </option>
+          <option 
+            value="https://www.wiseguyscomedy.com/utah/ogden" 
+            data-second-link="https://www.wiseguyscomedy.com/utah/ogden"
+          >
+            Wiseguys Ogden
+          </option>
+        </optgroup>
+        <optgroup label="Park City">
+          <option 
+            value="https://www.deervalleyamphitheater.com/events/" 
+            data-second-link="https://www.deervalleyamphitheater.com/events/"  
+          >
+            Deer Valley Amphitheater
+          </option>
+          <option
+            value="https://salt-lake-city.events/venue/egyptian-theatre-ut/" 
+            data-second-link="https://parkcityshows.com/shows-ticketing/upcoming-shows/events"
+          >
+            Egyptian Theater Park City
+          </option>
+          <option 
+            value="https://www.themarquispc.com/events/"
+            data-second-link="https://www.themarquispc.com/events/"
+          >
+            Marquis
+          </option>
+          <option 
+            value="https://www.visitparkcity.com/events/" 
+            data-second-link="https://www.visitparkcity.com/events/"
+          >
+            Visit Park City Events
+          </option>
+        </optgroup>
+        <optgroup label="Salt Lake City">
+          <option
+            value="https://www.saltlakecountyarts.org/venues/abravanel-hall#events" 
+            data-second-link="https://www.saltlakecountyarts.org/venues/abravanel-hall#events"
+          >
+            Abravanel Hall
+          </option>
+          <option 
+            value="https://aceshighsaloon.com/events/" 
+            data-second-link="https://aceshighsaloon.com/events/"  
+          >
+            Ace's High Saloon
+          </option>
+          <option 
+            value="https://www.abarnamedsue.com/events" 
+            data-second-link="https://www.abarnamedsue.com/events"
+          >
+            Bar Named Sue on Highland
+          </option>
+          <option 
+            value="https://www.thebeehiveslc.com/" 
+            data-second-link="https://www.facebook.com/thebeehiveSLC/"
+          >
+            Beehive
+            </option>
+          <option
+            value="https://www.saltlakecountyarts.org/venues/capitol-theatre#events" 
+            data-second-link="https://www.saltlakecountyarts.org/venues/capitol-theatre#events"
+          >
+            Capitol Theater
+          </option>
+          <option
+            value="https://www.axs.com/venues/128206/the-commonwealth-room-south-salt-lake-tickets" 
+            data-second-link="https://thestateroompresents.com/the-commonwealth-room"
+          >
+            Commonwealth Room
+          </option>
+          <option 
+            value="https://www.thecomplexslc.com/" 
+            data-second-link="https://www.thecomplexslc.com/"
+          >
+            Complex
+          </option>
+          <option 
+            value="https://www.deltacenter.com/events/" 
+            data-second-link="https://www.deltacenter.com/events/"
+          >
+            Delta Center
+          </option>
+          <option 
+            value="https://www.depotslc.com/shows" 
+            data-second-link="https://www.depotslc.com/shows"
+          >
+            Depot
+          </option>
+          <option 
+            value="https://diabolicalrecords.com/" 
+            data-second-link="https://www.instagram.com/diabolicalslc/?hl=en"
+          >
+            Diabolical Records
+          </option>
+          <option 
+            value="https://www.quartersslc.com/the-dlc" 
+            data-second-link="https://www.quartersslc.com/the-dlc"
+          >
+            DLC at Quarters
+          </option>
+          <option
+            value="https://www.saltlakecountyarts.org/venues/eccles-theater#events" 
+            data-second-link="https://www.saltlakecountyarts.org/venues/eccles-theater#events"
+          >
+            Eccles Theater
+          </option>
+          <option 
+            value="https://thegallivancenter.com/events/" 
+            data-second-link="https://thegallivancenter.com/events/"
+          >
+            Gallivan Center
+          </option>
+          <option 
+            value="https://lnepresents.com/venues/granary-live/" 
+            data-second-link="https://www.instagram.com/granarylive/"
+          >
+            Granary Live
+          </option>
+          <option 
+            value="https://www.graywhaleslc.com/content/Locations" 
+            data-second-link="https://www.instagram.com/graywhaleslc/"
+          >
+            Graywhale Entertainment Taylorsville
+          </option>
+          <option 
+            value="https://www.kilbycourt.com/" 
+            data-second-link="https://www.kilbycourt.com/"
+          >
+            Kilby Court
+          </option>
+          <option 
+            value="https://artstickets.utah.edu/" 
+            data-second-link="https://artstickets.utah.edu/"
+          >
+            Kingsbury Hall
+          </option>
+          <option
+            value="https://maverikcenter.com/events-tickets/upcoming-events/" 
+            data-second-link="https://maverikcenter.com/events-tickets/upcoming-events/"
+          >
+            Maverik Center
+          </option>
+          <option 
+            value="https://www.metromusichall.com/" 
+            data-second-link="https://www.metromusichall.com/"
+          >
+            Metro Music Hall
+          </option>
+          <option
+            value="https://wanderlog.com/place/details/3884480/red-butte-garden-amphitheatre" 
+            data-second-link="https://redbuttegarden.org/concerts/"
+          >
+            Red Butte Garden Amphitheater
+          </option>
+          <option 
+            value="https://skyslc.com/events/" 
+            data-second-link="https://skyslc.com/events/"
+          >
+            Sky
+          </option>
+          <option 
+            value="https://soundwellslc.com/events/"
+            data-second-link="https://soundwellslc.com/events/"
+          >
+            Soundwell
+          </option>
+          <option
+            value="https://www.axs.com/venues/127220/the-state-room-salt-lake-city-tickets" 
+            data-second-link="https://thestateroompresents.com/"
+          >
+            State Room
+          </option>
+          <option 
+            value="https://theunioneventcenter.com/" 
+            data-second-link="https://theunioneventcenter.com/"
+          >
+            Union Event Center
+          </option>
+          <option 
+            value="https://www.theurbanloungeslc.com/" 
+            data-second-link="https://www.theurbanloungeslc.com/"
+          >
+            Urban Lounge
+          </option>
+          <option 
+            value="https://www.wiseguyscomedy.com/utah/salt-lake-city"
+            data-second-link="https://www.wiseguyscomedy.com/utah/salt-lake-city"
+          >
+            Wiseguys SLC
+          </option>
+        </optgroup>
+        <optgroup label="Sandy">
+          <option 
+            value="https://americafirstfield.com/event-calendar/" 
+            data-second-link="https://americafirstfield.com/event-calendar/"
+          >
+            America First Field (Rio Tinto)
+          </option>
+          <option
+            value="https://www.livenation.com/venue/KovZpZAIE71A/sandy-amphitheater-events" 
+            data-second-link="https://www.instagram.com/sandy.amphitheater/?hl=en"
+          >
+            Sandy Amphitheater
+          </option>
+        </optgroup>
+        <optgroup label="Utah County">
+          <option 
+            value="https://www.velourlive.com/" 
+            data-second-link="https://www.velourlive.com/"
+          >
+            Velour Live Music Gallery
+          </option>
+        </optgroup>
+        <optgroup label="West Jordan">
+          <option 
+            value="https://www.wiseguyscomedy.com/utah/west-jordan" 
+            data-second-link="https://www.wiseguyscomedy.com/utah/west-jordan"
+          >
+            Wiseguys Jordan Landing
+          </option>
+        </optgroup>
+        <optgroup label="West Valley City">
+          <option 
+            value="https://www.utahfirstamp.com/shows" 
+            data-second-link="https://www.utahfirstamp.com/shows"
+          >
+            USANA / Utah First ... Amphitheater
+          </option>
+        </optgroup>
+        <option 
+            value="KRCL Events">
+        </option>
+        <option 
+            value="24tix General Site">
+        </option>
+        <option 
+            value="KUAA Events">
+        </option>
+        <option 
+            value="">
+        </option>
+        <!-- END OF OPTIONS -->
+      </datalist>
+
+    <!-- The iframe where the selected site will load -->
+    <div class="iframe-container">
+      <iframe id="contentFrame" src="" title="Selected Website Content">
+        Your browser does not support iframes.
+      </iframe>
+    </div>
+
+    <!-- This new div will hold the second clickable link -->
+    <div id="secondLinkContainer" style="margin-top: 15px;"></div>
+
+    <script>
+      // 1. ROBUSTLY DUPLICATE OPTIONS INTO THE DROPDOWN:
+      document.addEventListener('DOMContentLoaded', (event) => {
+          const dataListOptions = document.getElementById('optionList').querySelectorAll('option, optgroup');
+          const selectDropdown = document.getElementById('siteSelectorDropdown');
+
+          // *** FIX: Clear the dropdown completely before adding the cloned options ***
+          selectDropdown.innerHTML = '';
+
+          // Append a default option first
+          const defaultOption = document.createElement('option');
+          defaultOption.value = "";
+          defaultOption.textContent = "--Select a Venue--";
+          selectDropdown.appendChild(defaultOption);
+
+          // Clone the rest of the nodes exactly (including all data attributes)
+          dataListOptions.forEach(node => {
+              const clonedNode = node.cloneNode(true); 
+              selectDropdown.appendChild(clonedNode);
+          });
+      });
+
+      // 2. The JavaScript function called by the onchange event
+      function LoadIntoIframe(element) { // Capital 'L' and 'I' match your HTML
+          const iframeElement = document.getElementById("contentFrame");
+          const secondLinkContainer = document.getElementById("secondLinkContainer");
+          const selectedUrl = element.value;
+
+          // 1. Handle the main IFRAME URL
+          if (selectedUrl) {
+              iframeElement.src = selectedUrl;
+          } else {
+              iframeElement.src = "";
+          }
+
+          // 2. Handle the SECOND LINK URL retrieval
+          let secondLinkUrl = '';
+          let venueName = '';
+
+          // This logic now works because the options are cloned robustly on page load
+          if (element.tagName === 'SELECT') {
+              const selectedOption = element.options[element.selectedIndex];
+              secondLinkUrl = selectedOption.getAttribute('data-second-link');
+              venueName = selectedOption.text.trim();
+              
+          } else if (element.tagName === 'INPUT') {
+              const datalistOptions = document.getElementById('optionList').options;
+              for (let i = 0; i < datalistOptions.length; i++) {
+                  if (datalistOptions[i].value === element.value) {
+                      secondLinkUrl = datalistOptions[i].getAttribute('data-second-link');
+                      venueName = datalistOptions[i].text.trim();
+                      break;
+                  }
+              }
+          }
+
+          // 3. Create the clickable *button* link in the container div
+          if (secondLinkUrl) {
+              secondLinkContainer.innerHTML = 
+                `<a href="${secondLinkUrl}" target="_blank" class="action-button">
+                  Visit External Website for ${venueName}
+                 </a>`;
+          } else {
+              secondLinkContainer.innerHTML = '';
+          }
+      }
+    </script>
+  </body>
+</html>
