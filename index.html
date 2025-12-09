@@ -312,6 +312,11 @@
         <!-- END OF OPTIONS -->
       </datalist>
 
+    <div
+      id="searchResults"
+      style="margin-top: 2%; display: none;"
+    ></div>
+
     <!-- The iframe where the selected site will load -->
     <div class="iframe-container">
       <iframe id="contentFrame" src="" title="Selected Website Content">
@@ -323,6 +328,62 @@
     <div id="secondLinkContainer" style="margin-top: 15px;"></div>
 
     <script>
+       document.getElementById('searchInput').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSearchEnter(this.value.trim());
+        }
+       });
+       
+       function handleSearchEnter(searchTerm) {
+        const resultsContainer = document.getElementById('searchResults');
+        const options = document.getElementById('optionList').options;
+
+        resultsContainer.innerHTML = '';
+        resultsContainer.style.display = 'none';
+
+        if (!searchTerm) return;
+
+        const matches = [];
+
+        for (let i = 0; i < options.length; i++) {
+            const optionText = options[i].text.trim();
+            if (
+                optionText &&
+                optionText.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+                matches.push({
+                    text: optionText,
+                    url: options[i].value,
+                    secondLink: options[i].getAttribute('data-second-link')
+                });
+            }
+        }
+        
+        if (matches.length === 0) return;
+
+        resultsContainer.style.display = 'block';
+
+        matches.forEach(match => {
+            const btn = document.createElement('button');
+            btn.textContent = match.text;
+            btn.className = 'result-button';
+
+            btn.onclick = () => {
+                document.getElementById('contentFrame').src = match.url;
+
+                document.getElementById('secondLinkContainer').innerHTML =
+                `<a href="${match.secondLink}" target="_blank" class="action-button">
+                    Visit External Website for ${match.text}
+                 </a>`;
+                 
+                resultsContainer.style.display = 'none';
+                document.getElementById('searchInput').value = ''; 
+            };
+
+            resultsContainer.appendChild(btn);
+        });
+       }
       // 1. ROBUSTLY DUPLICATE OPTIONS INTO THE DROPDOWN:
       document.addEventListener('DOMContentLoaded', (event) => {
           const dataListOptions = document.getElementById('optionList').querySelectorAll(':scope > optgroup, :scope > option');
@@ -376,6 +437,8 @@
                       break;
                   }
               }
+              // Clear the search bar after selection
+              element.value = '';
           }
 
           // 3. Create the clickable *button* link in the container div
