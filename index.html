@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>What's Happening in Northern Utah Tonight?</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Select a Venue to see what's playing tonight!</h1>
+    <h1>Select a Venue to see what's playing!</h1>
 
     <!-- GOAL 1: Standard Dropdown Menu-->
      <div>
@@ -181,6 +182,12 @@
             Gallivan Center
           </option>
           <option 
+            value="https://atthegateway.com/calendar/" 
+            data-second-link="https://atthegateway.com/calendar/"
+          >
+            Gateway
+          </option>
+          <option 
             value="https://lnepresents.com/venues/granary-live/" 
             data-second-link="https://www.instagram.com/granarylive/"
           >
@@ -193,6 +200,12 @@
             Graywhale Entertainment Taylorsville
           </option>
           <option 
+          value="https://www.internationalbarslc.com/" 
+          data-second-link="https://www.internationalbarslc.com/"
+        >
+          International Bar
+        </option>
+          <option 
             value="https://www.kilbycourt.com/" 
             data-second-link="https://www.kilbycourt.com/"
           >
@@ -204,12 +217,7 @@
           >
             Kingsbury Hall
           </option>
-          <option
-            value="https://maverikcenter.com/events-tickets/upcoming-events/" 
-            data-second-link="https://maverikcenter.com/events-tickets/upcoming-events/"
-          >
-            Maverik Center
-          </option>
+
           <option 
             value="https://www.metromusichall.com/" 
             data-second-link="https://www.metromusichall.com/"
@@ -258,6 +266,12 @@
           >
             Wiseguys SLC
           </option>
+          <option 
+          value="https://www.woodbineslc.com/happenings"
+          data-second-link="https://www.woodbineslc.com/happenings"
+        >
+          Woodbine
+        </option>
         </optgroup>
         <optgroup label="Sandy">
           <option 
@@ -290,6 +304,12 @@
           </option>
         </optgroup>
         <optgroup label="West Valley City">
+            <option
+            value="https://maverikcenter.com/events-tickets/upcoming-events/" 
+            data-second-link="https://maverikcenter.com/events-tickets/upcoming-events/"
+          >
+            Maverik Center
+          </option>
           <option 
             value="https://www.utahfirstamp.com/shows" 
             data-second-link="https://www.utahfirstamp.com/shows"
@@ -326,6 +346,11 @@
 
     <!-- This new div will hold the second clickable link -->
     <div id="secondLinkContainer" style="margin-top: 15px;"></div>
+
+    <!-- This will be where the map iframe appears -->
+     <div>
+        <iframe class="map" src="https://www.google.com/maps/d/u/0/embed?mid=1Av6ZL2LfRLDsehK8pmugAKhK31q64K0&ehbc=2E312F"></iframe>
+     </div>
 
     <script>
        document.getElementById('searchInput').addEventListener('keydown', function (e) {
