@@ -3,24 +3,47 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: sans-serif;
-    margin: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 2vw;
   }
   select {
     padding: 8px;
     font-size: 16px;
   }
+  .map {
+    width: 70vw;
+    height: 80vw;
+    margin: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2vw;
+    overflow: hidden;
+  }
   /* Style for the iframe container and the iframe itself */
   .iframe-container {
     margin-top: 20px;
     border: 1px solid #ccc;
-    height: 600px; /* Adjust height as needed */
-    width: 100%;
+    height: 30vw; /* Adjust height as needed */
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2vw;
+    overflow: hidden;
   }
   iframe {
     width: 100%;
     height: 100%;
     border: none; /* Remove default iframe border */
+    display: flex;
+    align-items: center;
+  }
+  #siteSelectorDropdown {
+    border-radius: 1vw;
+    overflow: hidden;
+  }
+  #searchInput {
+    border-radius: 1vw;
+    overflow: hidden;
   }
   label {
     font-weight: bold;
@@ -42,11 +65,30 @@ body {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
     margin-top:10px;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
   }
   .action-button:hover {
     background-color: #0056b3;
+  }
+  .result-button {
+    background-color: #007bff;
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top:10px;
+    text-align: center;
+    margin: .5vw;
+    width: fit-content;
+  }
+  .result-button:hover {
+    background-color: #007bff;
   }
   /* Hide specific duplicate options by attribute value */
   /* This is a simple workaround for the technical issue with duplicates in the dropdown */
@@ -54,4 +96,4 @@ body {
   select#siteSelectorDropdown option[value="https://www.davisarts.org"] + option[value="https://www.davisarts.org"] {
     display: none;
   }
-  
+    
