@@ -3,15 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What's Happening in Northern Utah Tonight?</title>
+    <title>Utah Concert Tracker</title>
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Select a Venue to see what's playing!</h1>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.png" alt="Utah Concert Tracker logo">
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="planner.html">Plans/Notes</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 class="home-h1">Select a Venue to see what's playing!</h1>
 
     <!-- GOAL 1: Standard Dropdown Menu-->
-     <div>
+  <div class="searchBox"> 
+    <div>
       <label for="siteSelectorDropdown">Choose A Venue:</label>
       <select id="siteSelectorDropdown" onchange="LoadIntoIframe(this)">
         <option value="">--Select a Venue--</option>
@@ -25,6 +40,7 @@
         <label for="searchInput">Search for a Venue:</label>
          <input type="text" id="searchInput" placeholder="Search options..." list="optionList" onchange="LoadIntoIframe(this)">
       </div>
+  </div>
 
       <!-- The Master List of Options (hidden from view, feeds both the select and input above)-->
       <datalist id="optionList">
@@ -339,9 +355,34 @@
 
     <!-- The iframe where the selected site will load -->
     <div class="iframe-container">
-      <iframe id="contentFrame" src="" title="Selected Website Content">
-        Your browser does not support iframes.
+        <iframe
+        id="contentFrame"
+        title="Selected Website Content"
+        srcdoc="
+          <html>
+            <head>
+              <style>
+                body {
+                  margin: 0;
+                  height: 100vh;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-family: 'Montserrat', sans-serif;
+                  color: black;
+                  text-align: center;
+                  background-color: rgba(37, 36, 36, 0.1);
+                  backdrop-filter: blur(10px);
+                }
+              </style>
+            </head>
+            <body>
+              <h1>Select a venue from the Drop-down or Search Bar to view events.</h1>
+            </body>
+          </html>
+        ">
       </iframe>
+      
     </div>
 
     <!-- This new div will hold the second clickable link -->
@@ -438,6 +479,7 @@
 
           // 1. Handle the main IFRAME URL
           if (selectedUrl) {
+              iframeElement.removeAttribute('srcdoc');
               iframeElement.src = selectedUrl;
           } else {
               iframeElement.src = "";
@@ -477,5 +519,8 @@
           }
       }
     </script>
+    <footer class="site-footer">
+      <p>© 2025 Utah Concert Tracker by Sydney Jo Goodwill</p>
+    </footer>
   </body>
 </html>
