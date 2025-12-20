@@ -1,0 +1,154 @@
+/* ============================= */
+/* MOBILE & TABLET RESPONSIVENESS */
+/* ============================= */
+
+/* Tablets: 481px - 768px */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.5rem 1rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .nav-logo {
+      align-self: center;
+      margin-bottom: 10px;
+    }
+  
+    .nav-logo img {
+      height: 50px;
+    }
+  
+    /* Search box and dropdowns */
+    .searchBox {
+      width: 95%;
+      padding: 1rem;
+    }
+  
+    input[type="text"], select, button, .result-button, .action-button {
+      width: 100%;
+      font-size: 14px;
+      margin: 0.5rem 0;
+    }
+  
+    /* Iframe and map */
+    .iframe-container, .map {
+      width: 95vw;
+      height: 50vw;
+      margin: 2vw auto;
+      border-radius: 3vw;
+    }
+  
+    /* Container plan and home h1 */
+    .container-plan, .home-h1 {
+      margin: 2vw auto;
+      padding: 2vw;
+      border-radius: 3vw;
+    }
+  
+    /* Task list */
+    #taskList {
+      margin: 2vw auto;
+      padding: 2vw;
+      line-height: 2vw;
+    }
+  
+    /* About photo */
+    .about-photo {
+      max-width: 90%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Mobile: 0 - 480px */
+  @media (max-width: 480px) {
+  
+    body {
+      padding: 0 0.5rem;
+    }
+  
+    /* Navbar */
+    .navbar {
+      padding: 0.5rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+  
+    .nav-logo {
+      align-self: center;
+      margin-bottom: 8px;
+    }
+  
+    .nav-logo img {
+      height: 40px;
+    }
+  
+    .navbar li a {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  
+    /* Search box, inputs, dropdowns, and buttons */
+    .searchBox {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    input[type="text"], select, button, .result-button, .action-button {
+      width: 100%;
+      font-size: 12px;
+      margin: 0.4rem 0;
+      padding: 8px;
+    }
+  
+    /* Iframe and map */
+    .iframe-container, .map {
+      width: 100%;
+      height: 60vw; /* taller on mobile to keep aspect ratio */
+      margin: 2vw auto;
+      border-radius: 5vw;
+    }
+  
+    /* Container plan and home h1 */
+    .container-plan, .home-h1 {
+      margin: 2vw auto;
+      padding: 3vw;
+      border-radius: 5vw;
+    }
+  
+    /* Task list */
+    #taskList {
+      margin: 2vw auto;
+      padding: 2vw;
+      line-height: 2vw;
+    }
+  
+    /* About photo */
+    .about-photo {
+      max-width: 95%;
+      height: auto;
+      margin: 0 auto;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    label {
+      font-size: 14px;
+    }
+  }
+  
