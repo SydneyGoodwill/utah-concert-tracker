@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Place to Think and Plan:</title>
     <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/style3.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="index.html" class="nav-logo">
+            <div class="nav-logo">
+            <a href="index.html"> 
               <img src="images/logo.png" alt="Utah Concert Tracker logo">
             </a>
+            </div>
+            <button class="hamburger">&#9776;</button>    
+    
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="planner.html">Plans/Notes</a></li>
@@ -85,10 +89,18 @@
             // localStorage only stores strings, so we use JSON.stringify
             localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
         }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    });  
     </script>
     <footer class="site-footer">
         <p>© 2025 Utah Concert Tracker by Sydney Jo Goodwill</p>
     </footer>
 </body>
 </html>
-
