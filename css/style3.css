@@ -1,0 +1,383 @@
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        position: relative;
+        z-index: 1000;
+    }
+    .nav-links {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        color: white !important;
+        background-color: chocolate;
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1001;
+    }
+    .nav-links.show {
+        display: flex !important;
+    }
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 10px 20px;
+        width: 100%;
+    }
+    .nav-logo {
+        margin-top: 0;
+        align-self: flex-start;
+        order: 1;
+    }
+    .hamburger {
+        order: 2;
+    }
+    .iframe-container, .map {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 2vw auto;
+    }
+    .searchBox, .container-plan {
+        width: 90%;
+        height: auto;
+        min-height: 50px;
+        margin: 2vw auto;
+        padding: 3vw;
+    }
+    .home-h1 {
+        width: 95%;
+        height: auto;
+        padding: 0.8em 1em;
+        font-size: 1.2em;
+        line-height: 1.1em;
+        margin: 1.5vw auto;
+    }
+    .home-h1 h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+    }
+    select, #searchInput {
+        width: 100%;
+        font-size: 14px;
+    }
+    .action-button, .result-button {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px;
+    }
+    .nav-links {
+        gap: 5px;
+    }
+    .iframe-container, .map {
+        width: 95%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 2vw auto;
+    }
+    .searchBox, .container-plan {
+        width: 95%;
+        margin: 2vw auto;
+        padding: 3vw;
+    }
+    .home-h1 {
+        width: 95%;
+        height: auto;
+        padding: 0.6em 0.8em;
+        font-size: 1em;
+        line-height: 1.1em;
+        text-align: center;
+        margin: 1vw auto;
+    }
+    select, #searchInput {
+        font-size: 12px;
+    }
+    .action-button, .result-button {
+        font-size: 12px;
+        padding: 6px;
+    }
+    .about-photo {
+        max-width: 90%;
+    }
+
+@media (max-width: 425px) {
+    body {
+        grid-template-rows: auto auto 1fr auto;
+        display: block !important;
+    }
+    .home-h1 {
+        width: 95%;
+        height: auto;
+        padding: 0.6em 0.8em;
+        font-size: 1em;
+        line-height: 1.1em;
+        text-align: center;
+        margin: 1vw auto;
+        min-height: 0 !important;
+        overflow: visible;
+    }
+    .home-h1 h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+    }
+}
+}
+body {
+    background-image: url('../images/concert-tracker-background-Main.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+  body {
+    .container-plan {
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }}
+  .site-footer {
+    background-color: rgba(37, 36, 36, 0.1);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    margin-top: auto;
+  }
+  .navbar {
+    background-color: rgba(37, 36, 36, 0.1);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+  .nav-logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .navbar li {
+    float: left;
+  }
+  .navbar li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .navbar li a:hover {
+    background-color: #ddd;
+    color: chocolate;
+  }
+  select {
+    padding: 8px;
+    font-size: 16px;
+  }
+  .map {
+    width: 70vw;
+    height: 80vw;
+    margin: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2vw;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
+  /* Style for the iframe container and the iframe itself */
+  .iframe-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    height: 70vw; /* Adjust height as needed */
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2vw;
+    overflow: hidden;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default iframe border */
+    display: flex;
+    align-items: center;
+  }
+  #siteSelectorDropdown {
+    border-radius: 1vw;
+    overflow: hidden;
+    margin: 1vw;
+  }
+  #searchInput {
+    border-radius: 1vw;
+    overflow: hidden;
+  }
+  .searchBox {
+    margin: 1vw;
+    padding: 1vw;
+    background-color: rgba(37, 36, 36, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid #ccc;
+    border-radius: 2vw;
+    overflow: hidden;
+  }
+  .home-h1 {
+    margin: 1vw;
+    padding: 1vw;
+    background-color: rgba(37, 36, 36, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid #ccc;
+    border-radius: 2vw;
+    overflow: hidden;
+  }
+  .container-plan {
+    margin: 1vw;
+    padding: 1vw;
+    background-color: rgba(37, 36, 36, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid #ccc;
+    border-radius: 2vw;
+    overflow: hidden;
+    align-self: flex-start;
+  }
+  label {
+    font-weight: bold;
+  }
+  h1 {
+    text-align: center;
+  }
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  .action-button {
+    background-color: chocolate;
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    margin-top:10px;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .action-button:hover {
+    background-color: coral;
+  }
+  .result-button {
+    background-color: chocolate;
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top:10px;
+    text-align: center;
+    margin: .5vw;
+    width: fit-content;
+  }
+  .result-button:hover {
+    background-color: coral;
+  }
+  /* Hide specific duplicate options by attribute value */
+  /* This is a simple workaround for the technical issue with duplicates in the dropdown */
+
+  select#siteSelectorDropdown option[value="https://www.davisarts.org"] + option[value="https://www.davisarts.org"] {
+    display: none;
+  }
+  button {
+    padding: 10px 15px;
+    background-color: chocolate;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+  background-color: coral;
+}
+li .delete-btn {
+  background-color: #d9534f;
+  padding: 5px 10px;
+}
+li .delete-btn:hover {
+  background-color: #c9302c;
+}
+#taskInput {
+  border-radius: 2vw;
+  line-height: 1vw;
+}
+#taskList {
+  margin: 1vw;
+  padding: 1vw;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 2vw;
+  line-height: 2vw;
+}
+.about-photo {
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: chocolate;
+    border-radius: 3px;
+}
+
+  
